@@ -22,6 +22,8 @@ from pytorch_lightning.utilities import rank_zero_info
 from ldm.data.base import Txt2ImgIterableBaseDataset
 from ldm.util import instantiate_from_config
 
+torch.backends.cudnn.benchmark = True
+torch.backends.cuda.matmul.allow_fp16_reduced_precision_reduction = True
 ## Un-comment this for windows
 ## os.environ["PL_TORCH_DISTRIBUTED_BACKEND"] = "gloo"
 
